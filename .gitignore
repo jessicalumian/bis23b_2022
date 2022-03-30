@@ -1,3 +1,6 @@
 reads/*
 output/*
-.snakemake/*
+.snakemake/
+input/*
+all_reads/*
+reports/*
