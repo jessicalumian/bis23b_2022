@@ -1,0 +1,24 @@
+# create signatures
+
+sourmash sketch dna *fasta
+
+# compare with rs207 gtdb database
+
+# lineage
+https://osf.io/v3zmg/download
+
+# db link
+https://osf.io/3a6gn/download
+
+# treat genomes like metagenomes, see what's in them
+
+for file in *.sig
+
+do
+
+ base=$(basename $file .fasta.sig)
+ echo $base
+
+ sourmash gather $file gtdb-rs207.genomic-reps.dna.k31.zip -o ${base}.smash > ${base}.out
+
+done
